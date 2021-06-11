@@ -2,9 +2,9 @@ import React from 'react';
 import './Header.css';
 import { BiNetworkChart } from 'react-icons/bi';
 
-export default () => {
+export default (black) => {
     return (
-        <header className="black">
+        <header className={black ? 'black' : ''}>
             <div className="header--logo">
 
                 <img src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-1-1.png" />
