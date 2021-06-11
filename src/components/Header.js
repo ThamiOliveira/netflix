@@ -12,7 +12,7 @@ export default () => {
             <div className="header--user">
                 <a href="/">
                     <img src=""/>
-                    {/* comentario teste */}
+                    {/* comentario teste */} 
                 </a>
             </div>
         </header>
