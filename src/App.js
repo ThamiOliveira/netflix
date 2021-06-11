@@ -9,6 +9,7 @@ export default () => {
 
   const [movieList, setMovieList] = useState([]);
   const [FeaturedData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -17,11 +18,11 @@ export default () => {
       setMovieList(list);
 
       //pegando a featured
-      let originals = list.filter(i=>i.slug === 'originals');
+      let originals = list.filter(i => i.slug === 'originals');
       let randomChosen = Math.floor(Math.random() * (originals[0].itens.results.length - 1))
       let chosen = originals[0].itens.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
-      setFeaturedData(chosenInfo); 
+      setFeaturedData(chosenInfo);
     }
 
     loadAll();
@@ -30,7 +31,7 @@ export default () => {
   return (
     <div className="page">
 
-      <Header />
+      <Header black={blackHeader} />
 
       {FeaturedData &&
         <FeaturedMovie item={FeaturedData} />
