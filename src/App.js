@@ -5,6 +5,7 @@ import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
 
+
 export default () => {
 
   const [movieList, setMovieList] = useState([]);
@@ -66,6 +67,12 @@ export default () => {
         Direitos de imagem para Netflix<br />
         Dados retirados do site Themoviedb.org
       </footer>
+
+      {movieList.length <= 0 &&
+        <div className="loading">
+          <img src="https://cdn.lowgif.com/small/0534e2a412eeb281-the-counterintuitive-tech-behind-netflix-s-worldwide.gif" alt="Carregando" />
+        </div>
+      }
     </div>
   );
 }
