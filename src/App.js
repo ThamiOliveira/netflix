@@ -31,7 +31,7 @@ export default () => {
 
   useEffect(() => {
     const scrollListener = () => {
-      if(window.scrollY > 10) {
+      if (window.scrollY > 10) {
         setBlackHeader(true);
       } else {
         setBlackHeader(false);
@@ -44,7 +44,6 @@ export default () => {
     return () => {
       window.removeEventListener('scroll', scrollListener);
     }
-
   }, []);
 
 
@@ -61,6 +60,12 @@ export default () => {
           <MovieRow key={key} title={item.title} itens={item.itens} />
         ))}
       </section>
+
+      <footer>
+        Feito com <span role="img" aria-label="coração">❤️</span> por Thamiris Oliveira<br />
+        Direitos de imagem para Netflix<br />
+        Dados retirados do site Themoviedb.org
+      </footer>
     </div>
   );
 }
